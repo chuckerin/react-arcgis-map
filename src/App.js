@@ -1,5 +1,5 @@
 import React from 'react';
-import {ReactMap} from './components/react-map/react-map';
+import ReactMap from './components/react-map/react-map';
 import './App.css';
 
 class App extends React.Component {
@@ -9,9 +9,11 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('App.render => ' + this.state.baseMap);
     return (
       <div className='full-size'>
-        <input type='text' placeholder='hybrid' onChange={handleChange} />
+        <input className='mapType' type='text' placeholder='hybrid' 
+          onChange={e => this.setState({ baseMap: e.target.value })} />
         <ReactMap baseMap={this.state.baseMap} />
       </div>
     );
@@ -19,7 +21,8 @@ class App extends React.Component {
 }
 
 const handleChange = (event) => {
-  this.state({baseMap: event.target.baseMap});
+  console.log(event.target.value);
+  this.state({baseMap: event.target.value});
 }
 
 export default App;

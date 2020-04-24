@@ -4,12 +4,15 @@ import { Map } from '@esri/react-arcgis';
 
 import './react-map.css';
 
-export const ReactMap = (baseMap) => (
-    <Map
-        mapProperties={{ basemap: 'hybrid' }}
+const ReactMap = (baseMap) => {
+    console.log('react-map => ' + baseMap.baseMap);
+    return <Map
+        mapProperties={{ basemap: baseMap.baseMap }}
         viewProperties={{
             center: [-93, 39],
             zoom: 5
         }}>
     </Map>
-)
+};
+
+export default ReactMap;
