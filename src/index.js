@@ -1,8 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { setDefaultOptions } from 'esri-loader';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+
+// configure esri-loader to lazy load the CSS
+// the fisrt time any react-arcgis components are rendered
+setDefaultOptions({ css: true });
 
 ReactDOM.render(
   <React.StrictMode>
