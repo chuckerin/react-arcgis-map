@@ -11,8 +11,7 @@ const ReactMap = (baseMap) => {
         viewProperties={{
             center: [-93, 39],
             zoom: 5
-        }}>
-    </Map>
+        }}/>
 };
 
 export default ReactMap;
